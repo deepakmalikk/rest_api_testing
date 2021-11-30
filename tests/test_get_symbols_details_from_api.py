@@ -31,8 +31,8 @@ def test_get_symbols_from_api(url):
 @pytest.mark.smoke
 def test_symbol_details_from_api(url):
     error_symbol_list = []
-    for item in test_get_symbols_from_api(url)[0:3]:
-        symbol_api_url = f"https://data.sifchain.finance/beta/asset/{item}"
+    for item in test_get_symbols_from_api(url):
+           symbol_api_url = f"{url}/{item}"
 
         symbol_api_url_response = requests.get(symbol_api_url)
         symbol_api_url_json_data = symbol_api_url_response.json()
@@ -55,4 +55,4 @@ def test_symbol_details_from_api(url):
 
                     assert_that(float(price_in_rowan)).is_greater_than(0)
     df = pd.DataFrame(error_symbol_list, columns=['Symbols'])
-    df.to_csv('C:/Users/prade/assets_sifchain/symbolsss_error.csv', index=False)
+    df.to_csv('../output_data/symbolsss_error.csv', index=False)
