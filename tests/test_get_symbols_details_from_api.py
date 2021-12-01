@@ -59,3 +59,4 @@ def test_symbol_details_from_api(url):
     file_path = "reports"
     file = "/symbols_error_to_csv_file.csv"
     df.to_csv(f"{file_path}{file}", index=False)
+    LOGGER.info(f"file is created: {file}")
