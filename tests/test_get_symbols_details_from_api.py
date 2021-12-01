@@ -1,6 +1,6 @@
 import requests
 from assertpy import assert_that, soft_assertions
-from configs import *
+from .configs import *
 import logging
 import pandas as pd
 import pytest
