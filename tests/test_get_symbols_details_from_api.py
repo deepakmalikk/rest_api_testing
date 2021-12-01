@@ -4,6 +4,7 @@ from .configs import *
 import logging
 import pandas as pd
 import pytest
+import csv
 
 LOGGER = logging.getLogger('pytest.ini')
 
@@ -58,5 +59,14 @@ def test_symbol_details_from_api(url):
     df = pd.DataFrame(error_symbol_list, columns=['Symbols'])
     # file_path = "output_data"
     # file = "symbols_error_to_csv_file.csv"
-    df.to_csv("output_data/symbols_error_to_csv_file.csv", index=False)
-    # LOGGER.info(f"file is created: {file}")
+
+
+
+
+    with open("output_data/symbols_error_to_csv_file.csv", 'w') as f:
+        writer = csv.writer(f)
+        writer.writerow(error_symbol_list)
+        # df.to_csv("output_data/symbols_error_to_csv_file.csv", index=False)
+        # LOGGER.info(f"file is created: {file}")
+
+
