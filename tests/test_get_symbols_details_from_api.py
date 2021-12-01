@@ -57,6 +57,6 @@ def test_symbol_details_from_api(url):
                     assert_that(float(price_in_rowan)).is_greater_than(0)
     df = pd.DataFrame(error_symbol_list, columns=['Symbols'])
     # file_path = "output_data"
-    # file = "symbols_error_to_csv_file.csv"
-    df.to_csv("output_data/symbols_error_to_csv_file.csv", index=False)
+    file = "symbols_error_to_csv_file.csv"
+    df.to_csv(file, index=False)
     # LOGGER.info(f"file is created: {file}")
