@@ -1,5 +1,5 @@
 from assertpy import assert_that
-from configs import *
+from .configs import *
 import pandas as pd
 import logging
 
