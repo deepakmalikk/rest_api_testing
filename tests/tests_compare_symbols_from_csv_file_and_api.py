@@ -23,7 +23,7 @@ def test_response_status_and_headers(url_response):
 '''This fixture is getting symbols from a csv file'''
 @pytest.mark.smoke
 def test_symbols_from_csv_file():
-    file_path = "../input_data"
+    file_path = "input_data"
     file = "/symbols_from_csv_file.csv"
     df = pd.read_csv(f"{file_path}/{file}", header=None, skiprows=1, index_col=0)
     return df.index
