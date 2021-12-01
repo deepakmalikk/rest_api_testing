@@ -58,5 +58,5 @@ def test_symbol_details_from_api(url):
     df = pd.DataFrame(error_symbol_list, columns=['Symbols'])
     # file_path = "output_data"
     # file = "symbols_error_to_csv_file.csv"
-    df.to_csv("..output_data/symbols_error_to_csv_file.csv", index=False)
+    df.to_csv("output_data/symbols_error_to_csv_file.csv", index=False)
     # LOGGER.info(f"file is created: {file}")
