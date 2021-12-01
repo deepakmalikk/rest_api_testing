@@ -3,7 +3,7 @@ from configs import *
 import pandas as pd
 import logging
 
-LOGGER = logging.getLogger('../pytest.ini')
+LOGGER = logging.getLogger('pytest.ini')
 
 '''This fixture is getting url response i.e in json format  '''
 @pytest.fixture()
