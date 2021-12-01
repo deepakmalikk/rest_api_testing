@@ -40,6 +40,7 @@ def test_symbol_details_from_api(url):
         for key in symbol_api_url_json_data:
             if key == "error":
                 error_symbol_list.append(item)
+                LOGGER.info(error_symbol_list)
             else:
                 symbol = symbol_api_url_json_data['symbol']
                 with soft_assertions():
