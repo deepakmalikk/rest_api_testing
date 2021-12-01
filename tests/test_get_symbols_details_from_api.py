@@ -66,4 +66,4 @@ def test_symbol_details_from_api(url):
     g.load(csv_file)
 
 
-  
+
