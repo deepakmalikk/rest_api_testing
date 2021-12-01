@@ -4,7 +4,7 @@ from .configs import *
 import logging
 import pandas as pd
 import pytest
-import github
+from github import Github
 
 
 LOGGER = logging.getLogger('pytest.ini')
@@ -58,12 +58,12 @@ def test_symbol_details_from_api(url):
 
                     assert_that(float(price_in_rowan)).is_greater_than(0)
     df = pd.DataFrame(error_symbol_list, columns=['Symbols'])
-    file = "symbols_error_to_csv_file.csv"
-    csv_file = df.to_csv(file, index=False)
+    file = "./symbols_error_to_csv_file.csv"
 
-    from github.MainClass import Github
-    g = Github('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')
-    g.load(csv_file)
+    csv_file = df.to_csv("symbols_error_to_csv_file.csv", index=False)
+    print(csv_file)
+
+
 
 
 
