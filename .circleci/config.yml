@@ -24,6 +24,7 @@ jobs:
             . venv/bin/activate
             pytest -v tests/test_get_symbols_details_from_api.py
             pytest -v tests/tests_compare_symbols_from_csv_file_and_api.py
+            mkdir /output_data/artifacts;
 
       - store_artifacts:
           path: /output_data/artifact-1
