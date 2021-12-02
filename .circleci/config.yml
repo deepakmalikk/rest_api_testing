@@ -24,10 +24,12 @@ jobs:
             . venv/bin/activate
             pytest -v tests/test_get_symbols_details_from_api.py
             pytest -v tests/tests_compare_symbols_from_csv_file_and_api.py
-            mkdir /output_data/artifacts;
+            echo "my artifact file" > /tmp/artifact-1;
+                       mkdir /tmp/artifacts;
+                       echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
 
       - store_artifacts:
-          path: /output_data/artifact-1
+          path: /tmp/artifact-1
           destination: artifact-file
       - store_artifacts:
-          path: /output_data/artifacts
+          path: /tmp/artifacts
