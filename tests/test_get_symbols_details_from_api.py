@@ -33,7 +33,7 @@ def test_get_symbols_from_api(url):
 @pytest.mark.smoke
 def test_symbol_details_from_api(url):
     error_symbol_list = []
-    for item in test_get_symbols_from_api(url)[0:5]:
+    for item in test_get_symbols_from_api(url):
 
         symbol_api_url = f"{url}/{item}"
         symbol_api_url_response = requests.get(symbol_api_url)
